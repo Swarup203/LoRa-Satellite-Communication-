@@ -20,6 +20,5 @@ Currently supported hardware includes:
 * **ESP32-S3 150–960Mhz - HELTEC LORA32 V3 SX1262**
 * **ESP32-S3 433Mhz Custom ESP32-S3 433MHz SX1278**
 
-Additionally, any ESP32 board with an SX1278 module can be configured using templates, allowing for customization to meet specific project requirements. For more detailed information on setup and compatibility, please refer to the [documentation](https://tinygs.com/documentation(https://github.com/G4lile0/tinyGS/wiki/Board-Templates)
-
+Additionally, any ESP32 board with an SX1278 module can be configured using templates, allowing for customization to meet specific project requirements. For more detailed information on setup and compatibility, please refer to the [documentation](https://github.com/G4lile0/tinyGS/wiki/Board-Templates)
 
