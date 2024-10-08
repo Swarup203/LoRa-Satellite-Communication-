@@ -1,6 +1,6 @@
 # LoRa-Satellite-Communication-
 <p align="center">
-<img src="/doc/images/TinyGS_dashboard.png" width="300">
+<img src="doc/images/main_Page.png" width="300">
 </p>
 
 In this project, we established a ground station using TinyGS with an ESP32 and SX1278 LoRa module. Our custom Arduino code receives telemetry data and visualizes it on the serial plotter, enabling seamless satellite communication. This innovative setup showcases the power of LoRa technology in connecting with orbiting satellites.
