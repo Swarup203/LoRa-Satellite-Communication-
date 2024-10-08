@@ -68,3 +68,25 @@ You can access your Ground Station's data and configuration through a local web 
 </p>
 
 Also you can use the serial port of your board to see the basic console.
+
+# TinyGS network architecture
+
+<p align="center">
+<img src="/doc/images/TinyGS_architecture.png" width="300">
+</p>
+
+# OTA update and Auto Tuning
+
+Once your Ground Station is alive and connected it can be automagically updated with the last version by the server via [OTA](https://github.com/G4lile0/tinyGS/wiki/OTA-Update).
+
+Also the Ground stations can be remote configured automagically ([Auto Tuning](https://github.com/G4lile0/tinyGS/wiki/Radio-Tuning-Guide)) to be able to hear the next satellite pass with the correct settings.
+
+Both systems are optional and you can opt-out at your Ground Station configuration, for example if you want to only support one specific satellite. But we recommend activating both to maintain the network health.
+
+# Community
+
+We are using Telegram as the main communication channel for the project. There are also two channels where you can subscribe and be updated automátically whenever a new packet is received by the network from the Satellite.
+
+- [Main community chat](https://t.me/joinchat/DmYSElZahiJGwHX6jCzB3Q)
+- [Data channel](https://t.me/tinyGS_Telemetry) station status and received packets
+- [Test channel](https://t.me/TinyGS_Test) RX packets by groundstations in test mode
