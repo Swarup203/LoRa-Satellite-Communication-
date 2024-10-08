@@ -57,7 +57,7 @@ This is the main data recovery system, but we are developing an API to access da
 
 # Local data access
 
-You can access to your Ground Station data and configuration via local website at your
+You can access your Ground Station's data and configuration through a local web interface. Simply use the respective IP address assigned to your board in your browser to view and manage the data.
 
 <p align="center">
 <img src="/doc/images/TinyGS_dashboard.png" width="300">
