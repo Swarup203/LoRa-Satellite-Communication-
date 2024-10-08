@@ -1,4 +1,4 @@
-# LoRa-Satellite-Communication-
+# Tiny Satellite Ground Station
 <p align="center">
 <img src="doc/images/main_Page.png" width="800">
 </p>
