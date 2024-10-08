@@ -26,7 +26,7 @@ Additionally, any ESP32 board with an SX1278 module can be configured using temp
 
 ------
 
-#### Use our brand new web installer to setup your board for first time. Just go to https://installer.tinygs.com and follow the instructions there
+#### Setting Up Your Board for the First Time . Just go to https://installer.tinygs.com and follow the instructions there
 
 -----
 
@@ -38,9 +38,6 @@ Later you can update your Ground Station via [local web OTA or auto update metho
 
 You can also use Arduino IDE, but is a longer and hard path, because you need to install all dependencies. [Arduino guide](https://github.com/G4lile0/tinyGS/wiki/Arduino-IDE)
 
-# Configuration
-
-Check our wiki [configuration page](https://github.com/G4lile0/tinyGS/wiki/Ground-Station-configuration)
 
 # Main data website
 
