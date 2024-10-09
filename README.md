@@ -62,14 +62,35 @@ To ensure optimal reception and transmission for the ground station, a properly 
 2. **Antenna design**:
    - Design a **¼-wave ground-plane antenna**, ideal for the 433 MHz frequency used by LoRa.
    - The antenna length can be calculated using the formula: 
-     \[
-     L = \frac{300}{4 \times Frequency}
-     \]
-     For 433 MHz, the antenna length will be approximately 17.3 cm.
+   **Formula**:
+     `L = 300 / (4 * Frequency)`
+      
+Where:
+- `L` is the length of the antenna in meters.
+- `Frequency` is the operating frequency in MHz.
+- 300 is the speed of light in a vacuum (in megahertz * meters).
+
+## For example, for a frequency of 433 MHz:
+ Explanation:
+ Wavelength (λ) of a radio wave is the distance it travels in one cycle and is given by 
+𝜆=𝑐/𝑓,
+where 
+c is the speed of light and 
+f is the frequency
+
+### For a LoRa system operating at 433 MHz:
+
+  L= 300 / (4 x 433)
+  L≈ (300 / 1732) = **0.173 meters** = **17.3 cm**
+​
 
 3. **Antenna tuning**:
    - Use a **nanoVNA** to tune the antenna for minimum **SWR (Standing Wave Ratio)**, ensuring it resonates well at the desired frequency.
    - Adjust the radials and main element length as needed to achieve a good match and reduce loss during signal transmission and reception.
+  
+     <p align="center">
+     <img src="doc/images/Antenna.png" width="400">
+     </p>
    
 4. **Mounting**:
    - Once tuned, mount the antenna in a clear space to avoid signal obstruction and maximize coverage.
