@@ -92,5 +92,18 @@ f is the frequency
      <img src="doc/images/Antenna.png" width="400">
      </p>
    
-4. **Mounting**:
-   - Once tuned, mount the antenna in a clear space to avoid signal obstruction and maximize coverage.
+### Radiation Pattern of a Dipole Antenna
+
+The radiation pattern of a dipole antenna is crucial for understanding its performance in different directions. A standard half-wave dipole antenna radiates energy in a **doughnut-shaped pattern**, with the strongest radiation occurring perpendicular to the axis of the antenna.
+
+     <p align="center">
+     <img src="doc/images/Radiation_pattern.GIF" width="600">
+     </p>
+
+#### Key Characteristics:
+- **Omnidirectional in the horizontal plane**: The dipole antenna radiates equally in all directions along the horizontal plane, making it effective for long-range communication in all directions.
+- **Minimal radiation at the ends**: Along the axis of the dipole (at the tips), the radiation is weakest, meaning that the antenna's performance is reduced in the directions along its length.
+- **Figure-eight pattern**: When viewed from the side, the radiation pattern resembles a figure-eight shape, with the strongest lobes perpendicular to the antenna.
+
+This pattern makes dipole antennas ideal for ground station setups where coverage in all horizontal directions is needed, but the vertical direction is less critical.
+
