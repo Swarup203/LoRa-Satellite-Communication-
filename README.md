@@ -95,7 +95,6 @@ f is the frequency
 ### Radiation Pattern of a Dipole Antenna
 
 The radiation pattern of a dipole antenna is crucial for understanding its performance in different directions. A standard half-wave dipole antenna radiates energy in a **doughnut-shaped pattern**, with the strongest radiation occurring perpendicular to the axis of the antenna.
-
      <p align="center">
      <img src="doc/images/Radiation_pattern.gif" width="600">
      </p>
