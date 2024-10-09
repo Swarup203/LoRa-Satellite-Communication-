@@ -50,50 +50,26 @@ Later you can update your Ground Station via [local web OTA or auto update metho
 You can also use Arduino IDE, but is a longer and hard path, because you need to install all dependencies. [Arduino guide](https://github.com/G4lile0/tinyGS/wiki/Arduino-IDE)
 
 
-# Main data website
+# Antenna
 
-All data received by TinyGS Ground Stations are showed at our TinyGS website
+To ensure optimal reception and transmission for the ground station, a properly tuned antenna is crucial. For this project, we recommend designing and using a **¼-wave ground-plane antenna**. The steps involve both setting up the embedded system with the TinyGS firmware and tuning the antenna using a **nanoVNA** (Vector Network Analyzer) for precise measurements.
 
-[https://tinygs.com/](https://tinygs.com/)
+### Steps:
+1. **Install and setup TinyGS firmware** on the ESP32-LoRa embedded system:
+   - Follow the steps to install the TinyGS firmware, which enables the ESP32 to communicate with satellites and function as a LoRa ground station.
+   - Ensure the ESP32 is properly connected to the LoRa module (SX1278) and all configurations are correct.
 
-At this web you can see:
+2. **Antenna design**:
+   - Design a **¼-wave ground-plane antenna**, ideal for the 433 MHz frequency used by LoRa.
+   - The antenna length can be calculated using the formula: 
+     \[
+     L = \frac{300}{4 \times Frequency}
+     \]
+     For 433 MHz, the antenna length will be approximately 17.3 cm.
 
-- [Ground Stations list](https://tinygs.com/stations)
-- [Supported satellites](https://tinygs.com/satellites)
-- [All data packets received by the community in real time](https://tinygs.com/packets)
-
-At your personal area you can edit some parameters of your Ground Stations remotely.
-
-This is the main data recovery system, but we are developing an API to access data.
-
-# Local data access
-
-You can access your Ground Station's data and configuration through a local web interface. Simply use the respective IP address assigned to your board in your browser to view and manage the data.
-
-<p align="center">
-<img src="/doc/images/TinyGS_dashboard.png" width="300">
-</p>
-
-Also you can use the serial port of your board to see the basic console.
-
-# TinyGS network architecture
-
-<p align="center">
-<img src="/doc/images/TinyGS_architecture.png" width="300">
-</p>
-
-# OTA update and Auto Tuning
-
-Once your Ground Station is alive and connected it can be automagically updated with the last version by the server via [OTA](https://github.com/G4lile0/tinyGS/wiki/OTA-Update).
-
-Also the Ground stations can be remote configured automagically ([Auto Tuning](https://github.com/G4lile0/tinyGS/wiki/Radio-Tuning-Guide)) to be able to hear the next satellite pass with the correct settings.
-
-Both systems are optional and you can opt-out at your Ground Station configuration, for example if you want to only support one specific satellite. But we recommend activating both to maintain the network health.
-
-# Community
-
-We are using Telegram as the main communication channel for the project. There are also two channels where you can subscribe and be updated automátically whenever a new packet is received by the network from the Satellite.
-
-- [Main community chat](https://t.me/joinchat/DmYSElZahiJGwHX6jCzB3Q)
-- [Data channel](https://t.me/tinyGS_Telemetry) station status and received packets
-- [Test channel](https://t.me/TinyGS_Test) RX packets by groundstations in test mode
+3. **Antenna tuning**:
+   - Use a **nanoVNA** to tune the antenna for minimum **SWR (Standing Wave Ratio)**, ensuring it resonates well at the desired frequency.
+   - Adjust the radials and main element length as needed to achieve a good match and reduce loss during signal transmission and reception.
+   
+4. **Mounting**:
+   - Once tuned, mount the antenna in a clear space to avoid signal obstruction and maximize coverage.
