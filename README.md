@@ -168,8 +168,9 @@ The [`receiver.ino`](receiver.ino) file initializes the **LoRa module** (SX1278)
    If a packet is malformed, the system flags a **CRC error**, while other error codes are logged for further debugging.
 
 #### Install Required Libraries:
-The necessary libraries, **RadioLib** and **SPI**, are included in the `libraries` folder of this repository. To install them:
+The necessary libraries, **RadioLib** and **SPI**, are included in the `lib` folder of this repository. To install them:
 
+- [`git clone https://github.com/Swarup203/LoRa-Satellite-Communication-.git`]
 - Navigate to the `libraries` folder in the cloned repository.
 - Copy the `RadioLib` and `SPI` folders.
 - Paste them into your Arduino IDE’s libraries directory. This is typically located in your Documents under `Arduino/libraries`.
