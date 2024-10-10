@@ -33,7 +33,7 @@ We have developed a custom ground station by soldering an ESP32 and LoRa SX1278 
 <img src="doc/images/Lora_Board.jpg" width="400">
 </p>
 
-# Install
+# How To Install TinyGs
 
 ------
 
