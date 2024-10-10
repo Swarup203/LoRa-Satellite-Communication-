@@ -73,10 +73,10 @@ To ensure optimal reception and transmission for the ground station, a properly 
 ## For example, for a frequency of 433 MHz:
  Explanation:
  Wavelength (λ) of a radio wave is the distance it travels in one cycle and is given by 
-𝜆=𝑐/𝑓,
-where 
-c is the speed of light and 
-f is the frequency
+ 𝜆=𝑐/𝑓,
+ where 
+ c is the speed of light and 
+ f is the frequency
 
 ### For a LoRa system operating at 433 MHz:
 
