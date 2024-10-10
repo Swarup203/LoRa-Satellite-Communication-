@@ -137,3 +137,65 @@ This custom SPI setup ensures reliable communication between the ESP32 and the L
    - **Error Handling**: Features like CRC (Cyclic Redundancy Check) guarantee data integrity even under noisy conditions.
 
 This setup provides a highly responsive and efficient communication link between two LoRa systems using a custom SPI configuration, simulating full-duplex functionality.
+
+# Developing the Ground Station Receiver System for CubeSat Telemetry
+
+This section covers the development of the software system for receiving CubeSat telemetry data using the `RadioLib` and `SPI` libraries. The receiver code, [`receiver.ino`](receiver.ino), enables full communication with a LoRa-based CubeSat, forming the core component of our ground station.
+
+### How the Code Works:
+
+The [`receiver.ino`](receiver.ino) file initializes the **LoRa module** (SX1278) using custom SPI pins on the ESP32 and sets the necessary parameters, including frequency, bandwidth, and spreading factor. Once initialized, it begins to **listen for incoming telemetry packets** from the CubeSat.
+
+**Key points in the code:**
+- **Custom SPI Pin Configuration:**
+   The custom SPI pins for ESP32 are configured as follows:
+   - `MOSI (27)`
+   - `MISO (19)`
+   - `SCK (5)`
+   - `NSS (18)`
+   - `RST (14)`
+   - `DIO0 (26)`
+   - `DIO1 (32)`
+
+- **Packet Reception and Data Handling:**
+   The system continuously listens for incoming packets and uses the `setFlag()` function to handle received packets. Upon successful reception, it prints important telemetry data such as:
+   - **Received data**
+   - **RSSI** (Received Signal Strength Indicator)
+   - **SNR** (Signal-to-Noise Ratio)
+   - **Frequency error**
+
+- **Error Handling:**
+   If a packet is malformed, the system flags a **CRC error**, while other error codes are logged for further debugging.
+
+#### Install Required Libraries:
+The necessary libraries, **RadioLib** and **SPI**, are included in the `libraries` folder of this repository. To install them:
+
+- Navigate to the `libraries` folder in the cloned repository.
+- Copy the `RadioLib` and `SPI` folders.
+- Paste them into your Arduino IDE’s libraries directory. This is typically located in your Documents under `Arduino/libraries`.
+
+#### Open the Receiver Code:
+- Open the Arduino IDE.
+- Go to **File** > **Open** and select the `receiver.ino` file from the cloned repository.
+
+#### Select the Correct Board:
+In the Arduino IDE:
+
+- Navigate to **Tools** > **Board** and select **ESP32 Dev Module** (or your specific ESP32 variant).
+
+#### Upload the Code:
+- Connect your ESP32 board to your computer using a USB cable.
+- Select the COM port.
+- Click on the **Upload** button in the Arduino IDE (the right arrow icon).
+- Wait for the code to compile and upload to the ESP32.
+
+#### Open the Serial Monitor:
+- After uploading, open the Serial Monitor by going to **Tools** > **Serial Monitor** (or pressing `Ctrl + Shift + M`).
+- Set the baud rate to `115200` to view the telemetry data being received.
+
+The system will now listen for incoming telemetry packets from the CubeSat, displaying the received data along with key parameters like **RSSI** and **SNR** in the Serial Monitor.
+
+
+
+
+
