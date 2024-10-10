@@ -106,3 +106,34 @@ The radiation pattern of a dipole antenna is crucial for understanding its perfo
 
 This pattern makes dipole antennas ideal for ground station setups where coverage in all horizontal directions is needed, but the vertical direction is less critical.
 
+# Full-Duplex Communication Using RadioLib and Custom SPI in LoRa Subsystems
+
+By utilizing **RadioLib** and a **custom SPI** setup, we can create an efficient communication channel between two LoRa subsystems. Although LoRa technology is designed for half-duplex operation, we can simulate full-duplex communication by rapidly switching between transmit and receive modes.
+
+#### Custom SPI Pin Configuration:
+For the ESP32, we define custom SPI pins to interface with the SX1278 LoRa module:
+
+- **MOSI (Master Out Slave In)**: GPIO 27  
+- **MISO (Master In Slave Out)**: GPIO 19  
+- **SCK (Serial Clock)**: GPIO 5  
+- **NSS (Chip Select)**: GPIO 18  
+- **RST (Reset)**: GPIO 14  
+- **DIO0 (Interrupt)**: GPIO 26  
+- **DIO1 (Optional for better reception)**: GPIO 32
+
+This custom SPI setup ensures reliable communication between the ESP32 and the LoRa transceiver, allowing us to manage data transmission and reception efficiently.
+
+#### Optimized Setup for Communication:
+1. **Hardware Configuration**:
+   - Two ESP32 boards, each connected to an SX1278 LoRa module using the custom SPI pinout listed above.
+   - The nodes alternate between transmitting and receiving, simulating a full-duplex channel with minimal delay.
+
+2. **Efficient Data Transmission**:
+   - Using **RadioLib**, the LoRa nodes are dynamically switched between `startTransmit()` and `startReceive()` functions, enabling near real-time communication with low latency.
+   - **Collision Avoidance**: By controlling timing between the two nodes, packet collisions are avoided, ensuring smooth data flow.
+
+3. **Performance and Power Optimization**:
+   - **Minimal Latency**: The fast switching between transmit and receive ensures continuous data flow with almost no lag.
+   - **Error Handling**: Features like CRC (Cyclic Redundancy Check) guarantee data integrity even under noisy conditions.
+
+This setup provides a highly responsive and efficient communication link between two LoRa systems using a custom SPI configuration, simulating full-duplex functionality.
