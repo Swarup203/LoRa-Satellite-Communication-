@@ -65,10 +65,10 @@ To ensure optimal reception and transmission for the ground station, a properly 
    **Formula**:
      `L = 300 / (4 * Frequency)`
       
-Where:
-- `L` is the length of the antenna in meters.
-- `Frequency` is the operating frequency in MHz.
-- 300 is the speed of light in a vacuum (in megahertz * meters).
+   Where:
+   - `L` is the length of the antenna in meters.
+   - `Frequency` is the operating frequency in MHz.
+   - 300 is the speed of light in a vacuum (in megahertz * meters).
 
 ## For example, for a frequency of 433 MHz:
  Explanation:
