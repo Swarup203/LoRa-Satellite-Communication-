@@ -231,7 +231,9 @@ This guide explains how to set up communication between a satellite and a ground
    - This should match the satellite's (frequency, bandwidth, spreadingFactor, codingRate, syncWord, power, preambleLength, gain).
 5. **Monitor Incoming Data**: 
    - Open the Serial Monitor in Arduino IDE to view incoming messages transmitted by the satellite.
-   - Ensure **FLDRO** is disabled in the TinyGS webpage (for test mode).
+     <p align="center">
+     <img src="doc/images/data.png" width="500">
+     </p>
 
 ## Pin Configuration
 Make sure your pin connections between the ESP32 and LoRa module follow this configuration:
