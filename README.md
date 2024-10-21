@@ -228,7 +228,7 @@ This guide explains how to set up communication between a satellite and a ground
      ```cpp
      radio.begin(436.5, 250.0, 10, 5, 18, 5, 8, 0);
      ```
-   - This should match the satellite's frequency, bandwidth, spreading factor, etc.
+   - This should match the satellite's (frequency, bandwidth, spreadingFactor, codingRate, syncWord, power, preambleLength, gain).
 5. **Monitor Incoming Data**: 
    - Open the Serial Monitor in Arduino IDE to view incoming messages transmitted by the satellite.
    - Ensure **FLDRO** is disabled in the TinyGS webpage (for test mode).
