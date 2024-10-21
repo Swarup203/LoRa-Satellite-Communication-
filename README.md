@@ -198,6 +198,61 @@ In the Arduino IDE:
 The system will now listen for incoming telemetry packets from the CubeSat, displaying the received data along with key parameters like **RSSI** and **SNR** in the Serial Monitor.
 
 
+# LoRa Satellite Communication using TinyGS and ESP32
+
+## Overview
+This guide explains how to set up communication between a satellite and a ground station using TinyGS, LoRa, and ESP32 modules. We will configure one ESP32 + LoRa module as a transmitter (via TinyGS) and another as a receiver using Arduino IDE.
+
+## Ground Station Setup
+
+### Transmitter Setup (Using TinyGS)
+1. **Flash TinyGS firmware**: Install TinyGS firmware on one of your LoRa + ESP32 modules.
+2. **Connect to TinyGS**: After setup, navigate to the **Operations** section and select **Manual Tuning**.
+3. **Choose a Satellite**: Select a satellite from the list, which will act as the transmitter.
+   - You will find satellite-specific details such as:
+     - Satellite Name, NORAD, Frequency, Mode
+     - Spreading Factor, Bandwidth, Coding Rate
+     - Syncword, CRC, Preamble Length, FLDRO, TX Power, etc.
+4. **Prepare for Transmission**: Write your message on the TinyGS webpage and click **SEND TX** to transmit the data.
+
+### Receiver Setup
+1. **Install Dependencies**: Ensure all required libraries (such as RadioLib) are installed in the Arduino IDE.
+2. **Open Code**: Open the `receiver.ino` code in your Arduino IDE.
+3. **Upload Code**: 
+   - Connect your ESP32 + LoRa board to your computer.
+   - Select the correct **board** and **COM port** in Arduino IDE.
+   - During upload, press and hold the **BOOT** button on the ESP32.
+   - After uploading, press the **ENABLE** button.
+4. **Configure the Receiver**:
+   - Use the satellite-specific data from TinyGS to configure the receiver in the `radio.begin` function. For example:
+     ```cpp
+     radio.begin(436.5, 250.0, 10, 5, 18, 5, 8, 0);
+     ```
+   - This should match the satellite's frequency, bandwidth, spreading factor, etc.
+5. **Monitor Incoming Data**: 
+   - Open the Serial Monitor in Arduino IDE to view incoming messages transmitted by the satellite.
+   - Ensure **FLDRO** is disabled in the TinyGS webpage (for test mode).
+
+## Pin Configuration
+Make sure your pin connections between the ESP32 and LoRa module follow this configuration:
+
+| ESP32 Pin | LoRa Pin |
+|-----------|----------|
+| 27        | MOSI     |
+|19         | MISO     |
+| 5         | SCK      |
+| 18        | NSS      |
+| 26        | DIO0     |
+| 32        | DIO1     |
+| 14        | RST      |
+
+## Notes:
+- Ensure you press the **BOOT** button during code upload.
+- Match the satellite configuration on the transmitter and receiver sides for successful communication.
+- Disable **FLDRO** for test mode transmission in TinyGS.
+
+
+
 
 
 
