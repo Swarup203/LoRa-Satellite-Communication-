@@ -232,7 +232,7 @@ This guide explains how to set up communication between a satellite and a ground
 5. **Monitor Incoming Data**: 
    - Open the Serial Monitor in Arduino IDE to view incoming messages transmitted by the satellite.
      <p align="center">
-     <img src="doc/images/data.png" width="600">
+     <img src="doc/images/monitor.png" width="1000">
      </p>
 
 ## Pin Configuration
