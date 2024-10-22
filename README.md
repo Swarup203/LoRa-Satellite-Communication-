@@ -163,6 +163,11 @@ The [`receiver.ino`](receiver.ino) file initializes the **LoRa module** (SX1278)
    - **RSSI** (Received Signal Strength Indicator)
    - **SNR** (Signal-to-Noise Ratio)
    - **Frequency error**
+     
+     *For an example :*
+      <p align="center">
+      <img src="doc/images/data.png" width="500">
+      </p>
 
 - **Error Handling:**
    If a packet is malformed, the system flags a **CRC error**, while other error codes are logged for further debugging.
